@@ -1,5 +1,4 @@
 function random(a, b = 1) {
-  // if only 1 argument is provided, we need to swap the values of a and b
   if (b === 1) {
     [a, b] = [b, a];
   }
