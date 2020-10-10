@@ -1,5 +1,6 @@
-import { view, game } from "./quiz";
 import { data } from "./data";
+import { game } from "./game";
+import { start, response } from "./variables";
 
-view.start.addEventListener("click", () => game.start(data), false);
-view.response.addEventListener("click", (event) => game.check(event), false);
+start.addEventListener("click", () => game.start(data), false);
+response.addEventListener("click", (event) => game.check(event), false);

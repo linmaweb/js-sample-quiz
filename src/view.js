@@ -1,13 +1,17 @@
-export default {
-  score: document.querySelector("#score strong"),
-  question: document.querySelector("#question"),
-  result: document.querySelector("#result"),
-  info: document.querySelector("#info"),
-  start: document.querySelector("#start"),
-  response: document.querySelector("#response"),
-  timer: document.querySelector("#timer strong"),
-  hiScore: document.querySelector("#hiScore strong"),
+import {score, question, result, info, start, response, timer, hiScore } from "./variables";
+import {game} from './game'
 
+const view = {
+
+  score, 
+  question, 
+  result, 
+  info, 
+  start, 
+  response, 
+  timer, 
+  hiScore,
+  
   render(target, content, attributes) {
     for (const key in attributes) {
       target.setAttribute(key, attributes[key]);
@@ -37,6 +41,7 @@ export default {
   teardown() {
     this.hide(this.question);
     this.hide(this.response);
+    this.hide(this.result);
     this.show(this.start);
     this.render(this.hiScore, game.hiScore());
   },
@@ -44,5 +49,7 @@ export default {
   buttons(array) {
     return array.map((value) => `<button>${value}</button>`).join("");
   }
-  
+
 };
+
+export { view };
